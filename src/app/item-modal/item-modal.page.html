@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Item</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input [(ngModel)]="item" aria-placeholder="Item">Item</ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label aria-placeholder="Quantity">Quantity</ion-label>
+    <ion-select [(ngModel)]="selectedOption">
+      <ion-select-option *ngFor="let option of options" [value]="option">{{ option }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-button expand="full" (click)="save()">Save</ion-button>
+
+  
+</ion-content>
